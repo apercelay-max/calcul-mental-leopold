@@ -1,0 +1,14 @@
+# OS
+.DS_Store
+Thumbs.db
+
+# Editors
+.vscode/
+.idea/
+
+# Dependencies (à ajuster selon la stack retenue)
+node_modules/
+
+# Env
+.env
+.env.local
