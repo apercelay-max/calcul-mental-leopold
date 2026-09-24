@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Calcul Mental - Léopold</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div id="screen-menu" class="screen active">
+  <h1>🧮 Calcul Mental</h1>
+
+  <div class="section">
+    <h2>Opération</h2>
+    <div class="choices" id="ops">
+      <button class="choice selected" data-op="add">➕ Addition</button>
+      <button class="choice" data-op="sub">➖ Soustraction</button>
+      <button class="choice" data-op="mul">✖️ Multiplication</button>
+      <button class="choice" data-op="div">➗ Division</button>
+      <button class="choice" data-op="mix">🎲 Mélange</button>
+    </div>
+  </div>
+
+  <div class="section">
+    <h2>Niveau</h2>
+    <div class="choices" id="levels">
+      <button class="choice selected" data-level="1">Niveau 1</button>
+      <button class="choice" data-level="2">Niveau 2</button>
+      <button class="choice" data-level="3">Niveau 3</button>
+    </div>
+  </div>
+
+  <button id="start-btn" class="primary-btn">Commencer !</button>
+
+  <div id="best-score" class="best-score"></div>
+</div>
+
+<div id="screen-game" class="screen">
+  <div class="hud">
+    <span id="progress">Question 1/10</span>
+    <span id="score">Score : 0</span>
+  </div>
+  <div class="question" id="question">?</div>
+  <input type="number" id="answer" inputmode="numeric" autocomplete="off" placeholder="Ta réponse">
+  <button id="validate-btn" class="primary-btn">Valider</button>
+  <div id="feedback" class="feedback"></div>
+</div>
+
+<div id="screen-end" class="screen">
+  <h1 id="end-title">Bravo !</h1>
+  <p id="end-score" class="end-score"></p>
+  <p id="end-time" class="end-time"></p>
+  <button id="replay-btn" class="primary-btn">Rejouer</button>
+  <button id="menu-btn" class="secondary-btn">Menu</button>
+</div>
+
+<script src="app.js"></script>
+</body>
+</html>
