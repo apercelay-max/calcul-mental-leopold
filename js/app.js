@@ -106,6 +106,8 @@ const signBtn = document.getElementById('btn-sign');
 const validateBtn = document.getElementById('btn-validate');
 const nextBtn = document.getElementById('btn-next');
 const feedbackEl = document.getElementById('quiz-feedback');
+const hintBtn = document.getElementById('btn-hint');
+const hintEl = document.getElementById('quiz-hint');
 
 function renderQuestion() {
   const q = quiz.questions[quiz.index];
@@ -120,9 +122,18 @@ function renderQuestion() {
   feedbackEl.className = 'quiz-feedback';
   validateBtn.classList.remove('hidden');
   nextBtn.classList.add('hidden');
+  hintEl.textContent = q.hint || '';
+  hintEl.classList.add('hidden');
+  hintBtn.textContent = '💡 Voir un indice';
+  hintBtn.classList.toggle('hidden', !q.hint);
   inputEl.disabled = false;
   inputEl.focus();
 }
+
+hintBtn.addEventListener('click', () => {
+  const showing = hintEl.classList.toggle('hidden') === false;
+  hintBtn.textContent = showing ? '🙈 Cacher l\'indice' : '💡 Voir un indice';
+});
 
 signBtn.addEventListener('click', () => {
   inputEl.value = inputEl.value.startsWith('-') ? inputEl.value.slice(1) : '-' + inputEl.value;
